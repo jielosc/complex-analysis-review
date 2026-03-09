@@ -832,8 +832,8 @@ contents['index'] = {
   </div>
   <div class="stack">
     <div class="card">
-      <div class="formula">\[f \text{ 解析} \Longrightarrow \oint_\gamma f(z)\,dz=0\]</div>
-      <p>这是从“解析性”走向“积分理论”的第一步。</p>
+      <div class="formula">\[\text{若 } f \text{ 在单连通区域 } D \text{ 内解析，且 } \gamma\subset D \text{ 为闭路，则 } \oint_\gamma f(z)\,dz=0\]</div>
+      <p>这是从“解析性”走向“积分理论”的第一步，但要记得它还依赖闭路与区域条件。</p>
     </div>
     <div class="card">
       <div class="formula">\[f(z_0)=\frac{1}{2\pi i}\oint_\gamma \frac{f(z)}{z-z_0}\,dz\]</div>
@@ -886,7 +886,7 @@ contents['basics'] = {
       <div class="kind definition">Definition</div>
       <h3>极形式</h3>
       <div class="formula">\[z=r(\cos\theta+i\sin\theta)=re^{i\theta}\]</div>
-      <p>这里 <span class="math-inline">\(r=|z|\)</span>，而 <span class="math-inline">\(\theta\)</span> 是辐角。要注意 <span class="math-inline">\(\operatorname{Arg}z\)</span> 是多值的。</p>
+      <p>这里 <span class="math-inline">\(r=|z|\)</span>，而 <span class="math-inline">\(\theta\)</span> 是辐角。通常 <span class="math-inline">\(\arg z\)</span> 表示辐角的多值集合；若取主值，则记作 <span class="math-inline">\(\operatorname{Arg} z\in(-\pi,\pi]\)</span>。</p>
     </article>
   </div>
 </section>
@@ -1020,7 +1020,7 @@ contents['analytic'] = {
     <article class="card">
       <div class="kind definition">Definition</div>
       <h3>共轭调和函数</h3>
-      <p>若 <span class="math-inline">\(u\)</span> 与 <span class="math-inline">\(v\)</span> 满足 C-R 方程，则称 <span class="math-inline">\(v\)</span> 是 <span class="math-inline">\(u\)</span> 的一个共轭调和函数，此时 <span class="math-inline">\(u+iv\)</span> 解析。</p>
+      <p>若 <span class="math-inline">\(u,v\)</span> 在某区域内具有连续一阶偏导，并满足 C-R 方程，则 <span class="math-inline">\(u+iv\)</span> 在该区域解析；这时常称 <span class="math-inline">\(v\)</span> 是 <span class="math-inline">\(u\)</span> 的一个共轭调和函数。</p>
     </article>
     <article class="card">
       <div class="kind definition">Definition</div>
@@ -1502,7 +1502,7 @@ contents['flashcards'] = {
         <div class="flash-face back">
           <small>答案</small>
           <h3>柯西积分定理</h3>
-          <div class="formula">\[f\text{ 在单连通区域内解析 }\Longrightarrow \oint_\gamma f(z)\,dz=0\]</div>
+          <div class="formula">\[f\text{ 在单连通区域 } D \text{ 内解析，且 } \gamma\subset D \text{ 为闭路 }\Longrightarrow \oint_\gamma f(z)\,dz=0\]</div>
         </div>
       </div>
     </div>
