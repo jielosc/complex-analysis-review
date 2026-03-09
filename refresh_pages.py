@@ -48,8 +48,8 @@ TEMPLATE = Template("""<!DOCTYPE html>
           <strong>$brand</strong>
         </div>
         <div class=\"top-actions\">
-          <button class=\"btn\" data-expand>展开本页证明卡片</button>
-          <button class=\"btn\" data-collapse>收起本页证明卡片</button>
+          <button class=\"btn btn-compact\" data-expand aria-label=\"展开本页证明卡片\" title=\"展开本页证明卡片\"><span class=\"btn-icon\">⊞</span><span class=\"btn-label\">展开证明</span></button>
+          <button class=\"btn btn-compact\" data-collapse aria-label=\"收起本页证明卡片\" title=\"收起本页证明卡片\"><span class=\"btn-icon\">⊟</span><span class=\"btn-label\">收起证明</span></button>
         </div>
       </div>
     </div>
