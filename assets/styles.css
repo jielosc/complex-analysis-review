@@ -291,6 +291,70 @@ body::after {
   font-size: .9rem;
 }
 
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 16px;
+}
+
+.portal-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: linear-gradient(160deg, rgba(243,200,104,.08), rgba(129,228,255,.06) 48%, rgba(255,255,255,.03));
+}
+
+.portal-card .portal-meta {
+  color: var(--muted);
+  font-size: .9rem;
+  margin-bottom: 10px;
+}
+
+.portal-card .portal-cta {
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.hero-ribbon {
+  margin-top: 18px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: linear-gradient(135deg, rgba(243,200,104,.10), rgba(129,228,255,.06));
+  padding: 16px 18px;
+}
+
+.hero-ribbon strong {
+  color: var(--gold-soft);
+}
+
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 16px;
+}
+
+.example-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+}
+
+.example-card .tagline {
+  color: var(--muted);
+  font-size: .92rem;
+  margin-bottom: 12px;
+}
+
+.solution-list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
 .section {
   border: 1px solid var(--line);
   border-radius: 30px;
@@ -568,6 +632,8 @@ summary::-webkit-details-marker { display: none; }
 
 @media (max-width: 1180px) {
   .layout,
+  .portal-grid,
+  .example-grid,
   .split,
   .grid-4,
   .grid-3,

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>午夜星图 · 复变函数期末复习 · 题型模板</title>
-  <meta name="description" content="复变函数常见题型与考场下手路线。" />
+  <meta name="description" content="复变函数 · 题型模板" />
   <script>
     window.MathJax = {
       tex: {
@@ -35,21 +35,29 @@
     <div class="layout">
       <aside class="sidebar">
         <h2>复变函数导航</h2>
-        <p class="lead">左侧栏是整站目录，可以按专题切换页面复习。</p>
+        <p class="lead">左侧目录可以直接切到不同专题。建议先看总览，再按薄弱点进入对应页面。</p>
         <nav class="nav">
           <a href="index.html">总览 <span style="color: var(--muted);">· 总览与复习路线</span></a>
-<a href="basics.html">基本定义 <span style="color: var(--muted);">· 复数、区域、极限与映射</span></a>
-<a href="analytic.html">解析与 C-R <span style="color: var(--muted);">· 复导数、解析性、调和函数</span></a>
+<a href="basics.html">基本定义 <span style="color: var(--muted);">· 复数、区域、极限与连续</span></a>
+<a href="analytic.html">解析与 C-R <span style="color: var(--muted);">· 复导数、C-R、调和函数</span></a>
 <a href="integral.html">复积分 <span style="color: var(--muted);">· 曲线积分、柯西积分定理、路径无关</span></a>
-<a href="formula.html">积分公式系 <span style="color: var(--muted);">· 柯西积分公式、Liouville、最大模</span></a>
-<a href="series.html">级数与留数 <span style="color: var(--muted);">· Taylor、Laurent、奇点、留数定理</span></a>
-<a href="exam.html">题型模板 <span style="color: var(--muted);">· 考场判断路线与解题模板</span></a>
+<a href="formula.html">积分公式系 <span style="color: var(--muted);">· 柯西积分公式与典型推论</span></a>
+<a href="series.html">级数与留数 <span style="color: var(--muted);">· Laurent、奇点、留数定理</span></a>
+<a href="exam.html">题型模板 <span style="color: var(--muted);">· 考场思路与综合例题</span></a>
 <a href="flashcards.html">翻卡速记 <span style="color: var(--muted);">· 主动回忆与速记训练</span></a>
 <a href="checklist.html">临考清单 <span style="color: var(--muted);">· 最后自查与冲刺建议</span></a>
         </nav>
         <div class="sidebar-box">
           <strong>复习口令</strong>
-          <p>先看 <span class="math-inline">\(\text{解析性}\)</span>，再看 <span class="math-inline">\(\text{区域条件}\)</span>，最后再决定是用 <span class="math-inline">\(\text{积分定理}\)</span>、<span class="math-inline">\(\text{积分公式}\)</span> 还是 <span class="math-inline">\(\text{留数}\)</span>。</p>
+          <p>先看 <span class="math-inline">\(\text{解析性}\)</span>，再看 <span class="math-inline">\(\text{区域条件}\)</span>，最后再决定用 <span class="math-inline">\(\text{柯西定理}\)</span>、<span class="math-inline">\(\text{积分公式}\)</span> 还是 <span class="math-inline">\(\text{留数}\)</span>。</p>
+        </div>
+        <div class="sidebar-box">
+          <strong>复习建议</strong>
+          <ul>
+            <li>定义与定理分开记忆，再用题型把它们串起来。</li>
+            <li>先判断工具，再开始计算。</li>
+            <li>每页都补了典型例题，适合临考前快速回忆。</li>
+          </ul>
         </div>
       </aside>
 
@@ -58,103 +66,19 @@
           <div class="eyebrow">✦ 复变函数期末复习专题</div>
           <h1>题型模板：进考场以后先分类，再动手</h1>
           <p>复变函数最讲究“看结构”。你如果一眼就能判断这题属于哪类，后面的计算量往往会下降很多。</p>
-          <div class="hero-badges">
-            <span class="hero-badge">先分类</span>
+          <div class="hero-badges"><span class="hero-badge">先分类</span>
 <span class="hero-badge">再选工具</span>
-<span class="hero-badge">少走弯路</span>
-          </div>
+<span class="hero-badge">少走弯路</span></div>
         </header>
 
         
-<section class="section">
-  <div class="section-head">
-    <div>
-      <div class="kicker">exam patterns</div>
-      <h2>六类常见题的下手顺序</h2>
-      <p class="intro">下面这些步骤几乎可以直接拿来当考场口令。</p>
-    </div>
-    <div class="badge">Templates</div>
-  </div>
-  <div class="timeline">
-    <div class="step">
-      <div class="num">1</div>
-      <div>
-        <h3>判断是否解析</h3>
-        <p>写成 <span class="math-inline">\(u+iv\)</span>，检查 <span class="math-inline">\(u_x=v_y\)</span> 与 <span class="math-inline">\(u_y=-v_x\)</span>，再补偏导连续。</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="num">2</div>
-      <div>
-        <h3>积分题先看能不能不算</h3>
-        <p>若函数解析、路径闭合、区域合适，就优先想到 <span class="math-inline">\(\oint_\gamma f(z)\,dz=0\)</span> 或原函数存在。</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="num">3</div>
-      <div>
-        <h3>看到 <span class="math-inline">\((z-a)\)</span> 分母先想积分公式</h3>
-        <p>不是所有积分都要展开，有些题直接一眼就是柯西积分公式。</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="num">4</div>
-      <div>
-        <h3>判断奇点类型时先看主部</h3>
-        <p>主部为零、有限项、无限项，分别对应可去奇点、极点、本性奇点。</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="num">5</div>
-      <div>
-        <h3>闭路积分大题往往落到留数</h3>
-        <p>先找圈内奇点，再逐个算留数，最后乘上 <span class="math-inline">\(2\pi i\)</span>。</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="num">6</div>
-      <div>
-        <h3>展开题要先问中心和环域</h3>
-        <p>同一个函数围绕不同中心、在不同环域，Laurent 展开会变得完全不一样。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-head">
-    <div>
-      <div class="kicker">mini advice</div>
-      <h2>最容易丢分的细节</h2>
-      <p class="intro">下面这些点经常不是“不会”，而是考场容易漏。</p>
-    </div>
-    <div class="badge">Pitfalls</div>
-  </div>
-  <div class="grid-3">
-    <article class="card">
-      <div class="kind exam">Pitfall 1</div>
-      <h3>忘记检查区域是否单连通</h3>
-      <p>函数解析并不自动推出任意闭路积分为零，区域条件也必须满足。</p>
-    </article>
-    <article class="card">
-      <div class="kind exam">Pitfall 2</div>
-      <h3>把“某点满足 C-R”误判成“邻域解析”</h3>
-      <p>解析是邻域性质，不只是某一点上的代数关系。</p>
-    </article>
-    <article class="card">
-      <div class="kind exam">Pitfall 3</div>
-      <h3>留数题漏掉内部奇点</h3>
-      <p>不是所有奇点都要算，只算路径内部的；但内部的一个都不能漏。</p>
-    </article>
-  </div>
-</section>
+<section class="section"><div class="section-head"><div><div class="kicker">exam patterns</div><h2>六类常见题的下手顺序</h2><p class="intro">下面这些步骤几乎可以直接拿来当考场口令。</p></div><div class="badge">Templates</div></div><div class="timeline"><div class="step"><div class="num">1</div><div><h3>判断是否解析</h3><p>写成 <span class="math-inline">\(u+iv\)</span>，检查 <span class="math-inline">\(u_x=v_y\)</span> 与 <span class="math-inline">\(u_y=-v_x\)</span>，再补偏导连续。</p></div></div><div class="step"><div class="num">2</div><div><h3>积分题先看能不能不算</h3><p>若函数解析、路径闭合、区域合适，就优先想到 <span class="math-inline">\(\oint_\gamma f(z)\,dz=0\)</span> 或原函数存在。</p></div></div><div class="step"><div class="num">3</div><div><h3>看到 <span class="math-inline">\((z-a)\)</span> 分母先想积分公式</h3><p>不是所有积分都要展开，有些题直接一眼就是柯西积分公式。</p></div></div><div class="step"><div class="num">4</div><div><h3>判断奇点类型时先看主部</h3><p>主部为零、有限项、无限项，分别对应可去奇点、极点、本性奇点。</p></div></div><div class="step"><div class="num">5</div><div><h3>闭路积分大题往往落到留数</h3><p>先找圈内奇点，再逐个算留数，最后乘上 <span class="math-inline">\(2\pi i\)</span>。</p></div></div><div class="step"><div class="num">6</div><div><h3>展开题要先问中心和环域</h3><p>同一个函数围绕不同中心、在不同环域，Laurent 展开会变得完全不一样。</p></div></div></div></section>
+<section class="section"><div class="section-head"><div><div class="kicker">mini advice</div><h2>最容易丢分的细节</h2><p class="intro">下面这些点经常不是“不会”，而是考场容易漏。</p></div><div class="badge">Pitfalls</div></div><div class="grid-3"><article class="card"><div class="kind exam">Pitfall 1</div><h3>忘记检查区域是否单连通</h3><p>函数解析并不自动推出任意闭路积分为零，区域条件也必须满足。</p></article><article class="card"><div class="kind exam">Pitfall 2</div><h3>把“某点满足 C-R”误判成“邻域解析”</h3><p>解析是邻域性质，不只是某一点上的代数关系。</p></article><article class="card"><div class="kind exam">Pitfall 3</div><h3>留数题漏掉内部奇点</h3><p>不是所有奇点都要算，只算路径内部的；但内部的一个都不能漏。</p></article></div></section>
+<section class="section"><div class="section-head"><div><div class="kicker">worked example</div><h2>综合例题：看题后如何选工具</h2><p class="intro">这类例题的重点不只是算对，更是要看出为什么应该选“留数”这条路。</p></div><div class="badge">Example</div></div><article class="card example-card"><div class="kind exam">Integrated Problem</div><h3>计算 <span class="math-inline">\(\oint_{|z|=2}\frac{z+2}{z(z-1)}\,dz\)</span></h3><p class="tagline">闭路积分 + 圈内有孤立奇点，优先考虑留数。</p><ol class="solution-list"><li>路径内部奇点是 <span class="math-inline">\(z=0\)</span> 与 <span class="math-inline">\(z=1\)</span>。</li><li>在 <span class="math-inline">\(z=0\)</span> 处，<div class="formula">\[\operatorname{Res}(f,0)=\lim_{z\to 0}\frac{z+2}{z-1}=-2\]</div></li><li>在 <span class="math-inline">\(z=1\)</span> 处，<div class="formula">\[\operatorname{Res}(f,1)=\lim_{z\to 1}\frac{z+2}{z}=3\]</div></li><li>留数和为 <span class="math-inline">\(1\)</span>，所以</li></ol><div class="formula">\[\oint_{|z|=2}\frac{z+2}{z(z-1)}\,dz = 2\pi i\]</div></article></section>
 
 
         <div class="section">
-          <div class="pager">
-            <a class="link-btn" href="series.html">← 上一页：级数与留数</a>
-            <a class="link-btn" href="flashcards.html">下一页：翻卡速记 →</a>
-          </div>
+          <div class="pager"><a class="link-btn" href="series.html">← 上一页：级数与留数</a> <a class="link-btn" href="flashcards.html">下一页：翻卡速记 →</a></div>
         </div>
       </main>
     </div>
