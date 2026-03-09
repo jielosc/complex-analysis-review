@@ -38,6 +38,7 @@ body {
     radial-gradient(circle at 80% 82%, rgba(255, 150, 197, 0.10), transparent 18%),
     linear-gradient(160deg, #050a13 0%, #091221 35%, #0b1424 62%, #070d18 100%);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 body::before,
@@ -148,6 +149,17 @@ body::after {
   grid-template-columns: 290px minmax(0, 1fr);
   gap: 22px;
   align-items: start;
+}
+
+.layout > *,
+.main > *,
+.portal-grid > *,
+.example-grid > *,
+.grid-2 > *,
+.grid-3 > *,
+.grid-4 > *,
+.split > * {
+  min-width: 0;
 }
 
 .sidebar {
@@ -710,17 +722,24 @@ summary::-webkit-details-marker { display: none; }
   }
 
   .nav {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    padding-bottom: 4px;
-    scrollbar-width: thin;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    overflow: visible;
+    padding-bottom: 0;
   }
 
   .nav a {
-    flex: 0 0 auto;
-    min-width: 160px;
+    min-width: 0;
+    width: 100%;
     padding: 10px 12px;
+    white-space: normal;
+    line-height: 1.45;
+  }
+
+  .nav a:hover,
+  .nav a.active {
+    transform: none;
   }
 
   .sidebar-box {
@@ -781,9 +800,12 @@ summary::-webkit-details-marker { display: none; }
   }
 
   .formula {
+    max-width: 100%;
     padding: 10px 12px;
     font-size: .95rem;
     -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 
   .formula mjx-container[display="true"] {
@@ -827,8 +849,12 @@ summary::-webkit-details-marker { display: none; }
     grid-template-columns: 1fr;
   }
 
+  .nav {
+    grid-template-columns: 1fr;
+  }
+
   .nav a {
-    min-width: 140px;
+    min-width: 0;
     font-size: .9rem;
   }
 
