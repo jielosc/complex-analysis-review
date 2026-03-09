@@ -197,6 +197,15 @@ body::after {
   background: linear-gradient(135deg, rgba(243,200,104,.12), rgba(129,228,255,.07));
 }
 
+.nav::-webkit-scrollbar {
+  height: 6px;
+}
+
+.nav::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,.16);
+  border-radius: 999px;
+}
+
 .sidebar-box {
   margin-top: 16px;
   border-radius: 18px;
@@ -644,17 +653,201 @@ summary::-webkit-details-marker { display: none; }
 }
 
 @media (max-width: 760px) {
-  .page { width: min(calc(100% - 16px), var(--max-width)); }
+  body {
+    line-height: 1.65;
+  }
+
+  .page {
+    width: min(calc(100% - 14px), var(--max-width));
+    padding: 12px 0 26px;
+  }
+
+  .layout {
+    gap: 14px;
+  }
+
+  .topbar {
+    top: 8px;
+    margin-bottom: 14px;
+    border-radius: 18px;
+  }
+
   .topbar-inner,
   .step {
     grid-template-columns: 1fr;
   }
-  .hero,
-  .section,
-  .sidebar {
-    padding: 18px;
-  }
+
   .topbar-inner {
     display: grid;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .brand strong {
+    font-size: .95rem;
+    line-height: 1.35;
+  }
+
+  .top-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .btn,
+  .link-btn {
+    min-height: 44px;
+    padding: 10px 12px;
+  }
+
+  .sidebar {
+    padding: 14px;
+    border-radius: 22px;
+  }
+
+  .sidebar .lead {
+    margin-bottom: 12px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+  }
+
+  .nav a {
+    flex: 0 0 auto;
+    min-width: 160px;
+    padding: 10px 12px;
+  }
+
+  .sidebar-box {
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .hero,
+  .section {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.9rem, 10vw, 2.7rem);
+    line-height: 1.12;
+  }
+
+  .hero p,
+  .section .intro,
+  .card p,
+  .card li,
+  .card ol {
+    font-size: .95rem;
+  }
+
+  .hero-badges,
+  .quick-links {
+    gap: 8px;
+  }
+
+  .hero-badge,
+  .badge,
+  .kind {
+    font-size: .82rem;
+  }
+
+  .hero-ribbon {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-radius: 18px;
+  }
+
+  .section-head {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .section h2 {
+    font-size: clamp(1.28rem, 6vw, 1.8rem);
+    line-height: 1.2;
+  }
+
+  .card {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .formula {
+    padding: 10px 12px;
+    font-size: .95rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .formula mjx-container[display="true"] {
+    font-size: .96em !important;
+  }
+
+  .portal-card .portal-cta {
+    padding-top: 12px;
+  }
+
+  .example-card .tagline {
+    margin-bottom: 10px;
+  }
+
+  .pager {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .pager .link-btn {
+    width: 100%;
+  }
+
+  .flash-face {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .checkitem {
+    padding: 12px 14px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .page {
+    width: min(calc(100% - 10px), var(--max-width));
+  }
+
+  .top-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .nav a {
+    min-width: 140px;
+    font-size: .9rem;
+  }
+
+  .hero h1 {
+    font-size: 1.72rem;
+  }
+
+  .hero-badge,
+  .badge,
+  .kind {
+    font-size: .78rem;
+    padding: 7px 10px;
+  }
+
+  .formula {
+    font-size: .9rem;
+  }
+
+  .footer {
+    font-size: .86rem;
   }
 }
