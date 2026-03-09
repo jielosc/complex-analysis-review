@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>午夜星图 · 复变函数期末复习 · 复积分</title>
+  <meta name="description" content="复积分、柯西积分定理与路径无关。" />
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body data-page="integral.html">
+  <div class="page">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <small>midnight atlas</small>
+          <strong>复变函数 · 复积分</strong>
+        </div>
+        <div class="top-actions">
+          <button class="btn" data-expand>展开本页证明卡片</button>
+          <button class="btn" data-collapse>收起本页证明卡片</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>复变函数导航</h2>
+        <p class="lead">左侧栏是整站目录，可以按专题切换页面复习。</p>
+        <nav class="nav">
+          <a href="index.html">总览 <span style="color: var(--muted);">· 总览与复习路线</span></a>
+<a href="basics.html">基本定义 <span style="color: var(--muted);">· 复数、区域、极限与映射</span></a>
+<a href="analytic.html">解析与 C-R <span style="color: var(--muted);">· 复导数、解析性、调和函数</span></a>
+<a href="integral.html">复积分 <span style="color: var(--muted);">· 曲线积分、柯西积分定理、路径无关</span></a>
+<a href="formula.html">积分公式系 <span style="color: var(--muted);">· 柯西积分公式、Liouville、最大模</span></a>
+<a href="series.html">级数与留数 <span style="color: var(--muted);">· Taylor、Laurent、奇点、留数定理</span></a>
+<a href="exam.html">题型模板 <span style="color: var(--muted);">· 考场判断路线与解题模板</span></a>
+<a href="flashcards.html">翻卡速记 <span style="color: var(--muted);">· 主动回忆与速记训练</span></a>
+<a href="checklist.html">临考清单 <span style="color: var(--muted);">· 最后自查与冲刺建议</span></a>
+        </nav>
+        <div class="sidebar-box">
+          <strong>复习口令</strong>
+          <p>先看 <span class="math-inline">\(\text{解析性}\)</span>，再看 <span class="math-inline">\(\text{区域条件}\)</span>，最后再决定是用 <span class="math-inline">\(\text{积分定理}\)</span>、<span class="math-inline">\(\text{积分公式}\)</span> 还是 <span class="math-inline">\(\text{留数}\)</span>。</p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="hero">
+          <div class="eyebrow">✦ 复变函数期末复习专题</div>
+          <h1>复积分：沿路径累积，但先别急着算</h1>
+          <p>复积分最容易出错的地方，是一看到积分就开始参数化。真正更高效的做法是先看函数是否解析、路径是不是闭路、区域是不是单连通。</p>
+          <div class="hero-badges">
+            <span class="hero-badge">曲线积分</span>
+<span class="hero-badge">ML 估计</span>
+<span class="hero-badge">柯西积分定理</span>
+          </div>
+        </header>
+
+        
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="kicker">section 01</div>
+      <h2>复曲线积分的定义</h2>
+      <p class="intro">参数化之后，复积分最终还是回到一元实积分上。</p>
+    </div>
+    <div class="badge">Definition</div>
+  </div>
+  <div class="grid-2">
+    <article class="card">
+      <div class="kind definition">Definition</div>
+      <h3>参数表示</h3>
+      <p>若曲线 <span class="math-inline">\(\gamma\)</span> 参数方程为 <span class="math-inline">\(z=z(t)\)</span>，其中 <span class="math-inline">\(a\le t\le b\)</span>，则</p>
+      <div class="formula">\[\int_{\gamma} f(z)\,dz = \int_a^b f(z(t))z'(t)\,dt\]</div>
+    </article>
+    <article class="card">
+      <div class="kind definition">Properties</div>
+      <h3>基本性质</h3>
+      <ul>
+        <li>反向积分会变号</li>
+        <li>可对分段光滑曲线逐段积分</li>
+        <li>线性性质与实积分相似</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="kicker">section 02</div>
+      <h2>ML 估计</h2>
+      <p class="intro">这是证明某段弧线积分趋于零时最标准的工具。</p>
+    </div>
+    <div class="badge">Estimate</div>
+  </div>
+  <article class="card">
+    <div class="kind theorem">Theorem</div>
+    <h3>ML 不等式</h3>
+    <div class="formula">\[\left|\int_{\gamma} f(z)\,dz\right| \le ML\]</div>
+    <p>其中 <span class="math-inline">\(M\)</span> 是曲线上 <span class="math-inline">\(|f(z)|\)</span> 的上界，<span class="math-inline">\(L\)</span> 是路径长度。</p>
+  </article>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="kicker">section 03</div>
+      <h2>柯西积分定理与路径无关</h2>
+      <p class="intro">这是复积分理论的核心。很多题一旦满足条件，就可以从“硬算”瞬间切换到“直接判零”。</p>
+    </div>
+    <div class="badge">Cauchy Theorem</div>
+  </div>
+  <div class="split">
+    <article class="card">
+      <div class="kind theorem">Theorem</div>
+      <h3>柯西积分定理</h3>
+      <p>若 <span class="math-inline">\(f\)</span> 在单连通区域 <span class="math-inline">\(D\)</span> 内解析，且 <span class="math-inline">\(\gamma\subset D\)</span> 为闭路，则</p>
+      <div class="formula">\[\oint_{\gamma} f(z)\,dz = 0\]</div>
+    </article>
+    <article class="card">
+      <div class="kind theorem">Theorem</div>
+      <h3>路径无关与原函数</h3>
+      <p>若 <span class="math-inline">\(f\)</span> 在单连通区域解析，则存在原函数 <span class="math-inline">\(F\)</span>，满足 <span class="math-inline">\(F'(z)=f(z)\)</span>，并且积分只与端点有关：</p>
+      <div class="formula">\[\int_a^b f(z)\,dz = F(b)-F(a)\]</div>
+    </article>
+  </div>
+  <details class="fold" open style="margin-top:16px;">
+    <summary>证明思路：柯西积分定理为什么成立？ <span style="color: var(--muted);">Proof Sketch</span></summary>
+    <div class="details-body">
+      设 <span class="math-inline">\(f=u+iv\)</span>，把复积分拆成两组实积分，再用 Green 公式处理。由于解析函数满足 C-R 方程，相关项互相抵消，于是闭路积分为零。
+      <div class="note">一句话记忆：解析性让绕一圈的总“旋度贡献”消失。</div>
+    </div>
+  </details>
+</section>
+
+
+        <div class="section">
+          <div class="pager">
+            <a class="link-btn" href="analytic.html">← 上一页：解析与 C-R</a>
+            <a class="link-btn" href="formula.html">下一页：积分公式系 →</a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="footer">复变函数期末复习站</div>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>

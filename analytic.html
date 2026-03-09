@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>午夜星图 · 复变函数期末复习 · 解析与 C-R</title>
+  <meta name="description" content="复导数、解析函数、Cauchy-Riemann 方程与调和函数。" />
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body data-page="analytic.html">
+  <div class="page">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <small>midnight atlas</small>
+          <strong>复变函数 · 解析与 C-R</strong>
+        </div>
+        <div class="top-actions">
+          <button class="btn" data-expand>展开本页证明卡片</button>
+          <button class="btn" data-collapse>收起本页证明卡片</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>复变函数导航</h2>
+        <p class="lead">左侧栏是整站目录，可以按专题切换页面复习。</p>
+        <nav class="nav">
+          <a href="index.html">总览 <span style="color: var(--muted);">· 总览与复习路线</span></a>
+<a href="basics.html">基本定义 <span style="color: var(--muted);">· 复数、区域、极限与映射</span></a>
+<a href="analytic.html">解析与 C-R <span style="color: var(--muted);">· 复导数、解析性、调和函数</span></a>
+<a href="integral.html">复积分 <span style="color: var(--muted);">· 曲线积分、柯西积分定理、路径无关</span></a>
+<a href="formula.html">积分公式系 <span style="color: var(--muted);">· 柯西积分公式、Liouville、最大模</span></a>
+<a href="series.html">级数与留数 <span style="color: var(--muted);">· Taylor、Laurent、奇点、留数定理</span></a>
+<a href="exam.html">题型模板 <span style="color: var(--muted);">· 考场判断路线与解题模板</span></a>
+<a href="flashcards.html">翻卡速记 <span style="color: var(--muted);">· 主动回忆与速记训练</span></a>
+<a href="checklist.html">临考清单 <span style="color: var(--muted);">· 最后自查与冲刺建议</span></a>
+        </nav>
+        <div class="sidebar-box">
+          <strong>复习口令</strong>
+          <p>先看 <span class="math-inline">\(\text{解析性}\)</span>，再看 <span class="math-inline">\(\text{区域条件}\)</span>，最后再决定是用 <span class="math-inline">\(\text{积分定理}\)</span>、<span class="math-inline">\(\text{积分公式}\)</span> 还是 <span class="math-inline">\(\text{留数}\)</span>。</p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="hero">
+          <div class="eyebrow">✦ 复变函数期末复习专题</div>
+          <h1>解析函数：一旦可导，结构就会突然变得很强</h1>
+          <p>复变函数的核心魅力就在这里：在复平面上“可导”不是一个轻量条件，它会逼出 C-R 方程、调和性、局部保角等一整串强性质。</p>
+          <div class="hero-badges">
+            <span class="hero-badge">复导数</span>
+<span class="hero-badge">C-R 方程</span>
+<span class="hero-badge">调和函数</span>
+          </div>
+        </header>
+
+        
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="kicker">section 01</div>
+      <h2>复导数与解析函数</h2>
+      <p class="intro">复导数的定义看起来像实导数，但因为 <span class="math-inline">\(h\)</span> 可以从任意方向趋近，所以要求严格得多。</p>
+    </div>
+    <div class="badge">Derivative</div>
+  </div>
+  <div class="grid-2">
+    <article class="card">
+      <div class="kind definition">Definition</div>
+      <h3>复导数</h3>
+      <div class="formula">\[f'(z_0)=\lim_{h\to 0}\frac{f(z_0+h)-f(z_0)}{h}\]</div>
+      <p>注意这里的 <span class="math-inline">\(h\)</span> 是复数，而不是只沿实轴趋近。</p>
+    </article>
+    <article class="card">
+      <div class="kind definition">Definition</div>
+      <h3>解析函数</h3>
+      <p>若函数在 <span class="math-inline">\(z_0\)</span> 的某个邻域内处处可导，则称它在 <span class="math-inline">\(z_0\)</span> 解析。若在整个复平面解析，则称为整函数。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="kicker">section 02</div>
+      <h2>Cauchy-Riemann 方程</h2>
+      <p class="intro">这是“解析性”的第一道门。考试中最常见的基础题就是用它来判断函数在哪些地方解析。</p>
+    </div>
+    <div class="badge">C-R</div>
+  </div>
+  <div class="split">
+    <article class="card">
+      <div class="kind theorem">Theorem</div>
+      <h3>C-R 方程</h3>
+      <p>设 <span class="math-inline">\(f(z)=u(x,y)+iv(x,y)\)</span>，若 <span class="math-inline">\(f\)</span> 在某点可导，则有</p>
+      <div class="formula">\[u_x=v_y, \qquad u_y=-v_x\]</div>
+      <p>若在邻域内偏导连续并满足上式，则 <span class="math-inline">\(f\)</span> 在该邻域解析。</p>
+    </article>
+    <details class="fold" open>
+      <summary>证明思路：为什么 C-R 会出现？ <span style="color: var(--muted);">Proof Sketch</span></summary>
+      <div class="details-body">
+        从导数定义出发，分别令 <span class="math-inline">\(h=\Delta x\)</span> 和 <span class="math-inline">\(h=i\Delta y\)</span>，即分别沿实轴和虚轴趋近 <span class="math-inline">\(0\)</span>。由于极限必须相同，比较这两种取法得到的表达式，就会推出 C-R 方程。
+        <div class="note">考试里写成“分别沿实轴与虚轴趋近并比较极限可得”通常就够了。</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="kicker">section 03</div>
+      <h2>调和函数与保角映射</h2>
+      <p class="intro">这两部分经常作为解析函数的推论出现，尤其在证明题和概念题里很常见。</p>
+    </div>
+    <div class="badge">Consequences</div>
+  </div>
+  <div class="grid-3">
+    <article class="card">
+      <div class="kind theorem">Theorem</div>
+      <h3>调和性</h3>
+      <p>若 <span class="math-inline">\(f=u+iv\)</span> 解析，则 <span class="math-inline">\(u\)</span> 与 <span class="math-inline">\(v\)</span> 都满足 Laplace 方程：</p>
+      <div class="formula">\[u_{xx}+u_{yy}=0, \qquad v_{xx}+v_{yy}=0\]</div>
+    </article>
+    <article class="card">
+      <div class="kind definition">Definition</div>
+      <h3>共轭调和函数</h3>
+      <p>若 <span class="math-inline">\(u\)</span> 与 <span class="math-inline">\(v\)</span> 满足 C-R 方程，则称 <span class="math-inline">\(v\)</span> 是 <span class="math-inline">\(u\)</span> 的一个共轭调和函数，此时 <span class="math-inline">\(u+iv\)</span> 解析。</p>
+    </article>
+    <article class="card">
+      <div class="kind definition">Definition</div>
+      <h3>保角映射</h3>
+      <p>若 <span class="math-inline">\(f\)</span> 在 <span class="math-inline">\(z_0\)</span> 解析且 <span class="math-inline">\(f'(z_0)\neq 0\)</span>，则它在该点附近保持角度与方向，称为保角。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="kicker">section 04</div>
+      <h2>考场模板：怎么判断函数是否解析</h2>
+      <p class="intro">这类题通常很流程化，关键在于别漏掉“邻域”和“偏导连续”。</p>
+    </div>
+    <div class="badge">Exam</div>
+  </div>
+  <div class="timeline">
+    <div class="step">
+      <div class="num">1</div>
+      <div>
+        <h3>先写成 <span class="math-inline">\(u+iv\)</span></h3>
+        <p>把原函数中的实部和虚部分离出来。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <div>
+        <h3>算四个偏导</h3>
+        <p>即 <span class="math-inline">\(u_x,u_y,v_x,v_y\)</span>，并检查 C-R 方程。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num">3</div>
+      <div>
+        <h3>补上充分条件</h3>
+        <p>若题目要求“在哪个区域解析”，记得说明偏导连续且在邻域内满足 C-R。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        <div class="section">
+          <div class="pager">
+            <a class="link-btn" href="basics.html">← 上一页：基本定义</a>
+            <a class="link-btn" href="integral.html">下一页：复积分 →</a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="footer">复变函数期末复习站</div>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>

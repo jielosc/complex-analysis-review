@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>午夜星图 · 复变函数期末复习 · 翻卡速记</title>
+  <meta name="description" content="复变函数速记翻卡页面。" />
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body data-page="flashcards.html">
+  <div class="page">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <small>midnight atlas</small>
+          <strong>复变函数 · 翻卡速记</strong>
+        </div>
+        <div class="top-actions">
+          <button class="btn" data-expand>展开本页证明卡片</button>
+          <button class="btn" data-collapse>收起本页证明卡片</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>复变函数导航</h2>
+        <p class="lead">左侧栏是整站目录，可以按专题切换页面复习。</p>
+        <nav class="nav">
+          <a href="index.html">总览 <span style="color: var(--muted);">· 总览与复习路线</span></a>
+<a href="basics.html">基本定义 <span style="color: var(--muted);">· 复数、区域、极限与映射</span></a>
+<a href="analytic.html">解析与 C-R <span style="color: var(--muted);">· 复导数、解析性、调和函数</span></a>
+<a href="integral.html">复积分 <span style="color: var(--muted);">· 曲线积分、柯西积分定理、路径无关</span></a>
+<a href="formula.html">积分公式系 <span style="color: var(--muted);">· 柯西积分公式、Liouville、最大模</span></a>
+<a href="series.html">级数与留数 <span style="color: var(--muted);">· Taylor、Laurent、奇点、留数定理</span></a>
+<a href="exam.html">题型模板 <span style="color: var(--muted);">· 考场判断路线与解题模板</span></a>
+<a href="flashcards.html">翻卡速记 <span style="color: var(--muted);">· 主动回忆与速记训练</span></a>
+<a href="checklist.html">临考清单 <span style="color: var(--muted);">· 最后自查与冲刺建议</span></a>
+        </nav>
+        <div class="sidebar-box">
+          <strong>复习口令</strong>
+          <p>先看 <span class="math-inline">\(\text{解析性}\)</span>，再看 <span class="math-inline">\(\text{区域条件}\)</span>，最后再决定是用 <span class="math-inline">\(\text{积分定理}\)</span>、<span class="math-inline">\(\text{积分公式}\)</span> 还是 <span class="math-inline">\(\text{留数}\)</span>。</p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="hero">
+          <div class="eyebrow">✦ 复变函数期末复习专题</div>
+          <h1>翻卡速记：适合考前最后十分钟</h1>
+          <p>点一下卡片就会翻面。真正有效的复习不是“看过”，而是你能不能自己说出答案。</p>
+          <div class="hero-badges">
+            <span class="hero-badge">主动回忆</span>
+<span class="hero-badge">公式速记</span>
+<span class="hero-badge">临考冲刺</span>
+          </div>
+        </header>
+
+        
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="kicker">flashcards</div>
+      <h2>翻卡自测</h2>
+      <p class="intro">建议你先自己回答，再点开看答案。</p>
+    </div>
+    <div class="badge">Active Recall</div>
+  </div>
+  <div class="flash-grid">
+    <div class="flashcard">
+      <div class="flash-inner">
+        <div class="flash-face front">
+          <small>卡片 1</small>
+          <h3>解析函数首先满足什么偏导关系？</h3>
+          <p>试着自己写出完整公式。</p>
+        </div>
+        <div class="flash-face back">
+          <small>答案</small>
+          <h3>Cauchy-Riemann 方程</h3>
+          <div class="formula">\[u_x=v_y, \qquad u_y=-v_x\]</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flashcard">
+      <div class="flash-inner">
+        <div class="flash-face front">
+          <small>卡片 2</small>
+          <h3>什么时候闭路积分直接为零？</h3>
+          <p>注意别忘了区域条件。</p>
+        </div>
+        <div class="flash-face back">
+          <small>答案</small>
+          <h3>柯西积分定理</h3>
+          <div class="formula">\[f\text{ 在单连通区域内解析 }\Longrightarrow \oint_\gamma f(z)\,dz=0\]</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flashcard">
+      <div class="flash-inner">
+        <div class="flash-face front">
+          <small>卡片 3</small>
+          <h3>留数在展开式里到底是哪一项？</h3>
+          <p>请说出它和 Laurent 展开的关系。</p>
+        </div>
+        <div class="flash-face back">
+          <small>答案</small>
+          <h3>一次负幂项的系数</h3>
+          <div class="formula">\[\operatorname{Res}(f,a)=\text{Laurent 展开中 }(z-a)^{-1}\text{ 的系数}\]</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flashcard">
+      <div class="flash-inner">
+        <div class="flash-face front">
+          <small>卡片 4</small>
+          <h3>为什么有界整函数一定是常数？</h3>
+          <p>试着自己说出所用定理。</p>
+        </div>
+        <div class="flash-face back">
+          <small>答案</small>
+          <h3>Liouville 定理</h3>
+          <div class="formula">\[f\text{ 整且有界 }\Longrightarrow f\equiv \text{const}\]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        <div class="section">
+          <div class="pager">
+            <a class="link-btn" href="exam.html">← 上一页：题型模板</a>
+            <a class="link-btn" href="checklist.html">下一页：临考清单 →</a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="footer">复变函数期末复习站</div>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
